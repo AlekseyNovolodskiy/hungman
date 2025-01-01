@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Проигрыш</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h1>Вы проиграли!</h1>
+<form action="/hungman/start" method="get">
+    <input type="hidden" name="username" th:value="${username}">
+    <button type="submit">Начать заново</button>
+</form>
+</body>
+</html>

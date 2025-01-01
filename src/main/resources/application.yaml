@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    driverClassName: org.postgresql.Driver
+    password: docker
+    username: docker
+    url: jdbc:postgresql://hungman_postgres_db:5458/postgres
+  thymeleaf:
+    cache: 'false'
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+pring:
+  application:
+    name: hungman
+server:
+  port: '9096'

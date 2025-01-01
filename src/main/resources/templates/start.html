@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Виселица - Новая Игра</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<h1>Игра Виселица - Добро пожаловать, <span th:text="${username}">пользователь</span>!</h1>
+<form action="/hungman/newgame" method="get">
+    <label for="complexity">Выберите сложность:</label>
+    <select name="complexity" id="complexity">
+        <option value="5">Легкая</option>
+        <option value="6">Средняя</option>
+        <option value="7">Сложная</option>
+        <option value="8">Очень сложная</option>
+    </select>
+    <input type="hidden" name="username" th:value="${username}">
+    <button type="submit">Начать игру</button>
+</form>
+</body>
+</html>

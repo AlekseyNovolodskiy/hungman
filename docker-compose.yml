@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  hungman_postgres_db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=hungman
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+    volumes:
+      - db:/var/lib/postgresql/data postgres
+    ports:
+      - "5458:5432"
+    networks:
+      - hungman_net
+
+  service_backend:
+    image: hungman_backend
+    build: .
+    environment:
+      - spring.datasource.url=docker
+      - spring.datasource.username=docker
+      - spring.datasource.url=jdbc:postgresql://hungman_postgres_db:5432/hungman
+
+    depends_on:
+      - hungman_postgres_db
+    ports:
+      - "9096:9096"
+
+    networks:
+      - hungman_net
+
+volumes:
+  db:
+
+networks:
+  hungman_net:

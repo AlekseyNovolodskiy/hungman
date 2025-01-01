@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Виселица - Игра</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script>
+        function validateInput(event) {
+            const char = String.fromCharCode(event.which);
+            const regex = /^[а-яА-ЯёЁ]+$/;
+            if (!regex.test(char)) {
+                event.preventDefault();
+                alert('Пожалуйста, вводите только буквы кириллицы.');
+            }
+        }
+
+        function setupValidation() {
+            const input = document.getElementById('symbol');
+            input.addEventListener('keypress', validateInput);
+        }
+
+        document.addEventListener('DOMContentLoaded', setupValidation);
+    </script>
+</head>
+<body>
+<div id="header">
+    <p>Пользователь: <span th:text="${username}"></span></p>
+</div>
+<p>Совершено ошибок: <span th:text="${mistakes}"></span></p>
+<div id="game">
+    <p>Замаскированное слово: <span th:text="${maskedWord}"></span></p>
+    <form action="/hungman/game" method="get">
+        <input type="hidden" name="key" th:value="${sessionKey}">
+        <label for="symbol">Введите букву:</label>
+        <input type="text" name="symbol" id="symbol" maxlength="1" required>
+        <button type="submit">Угадать</button>
+    </form>
+</div>
+</body>
+</html>
