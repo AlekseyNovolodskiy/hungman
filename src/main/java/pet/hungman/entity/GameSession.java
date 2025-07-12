@@ -2,6 +2,7 @@ package pet.hungman.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 import pet.hungman.repository.convereter.CharacterListConverter;
 import pet.hungman.repository.convereter.StringListConverter;
@@ -11,6 +12,8 @@ import java.util.UUID;
 
 @Data
 @Entity
+@Table(name = "game_session")
+@NoArgsConstructor
 public class GameSession {
 
     @Id

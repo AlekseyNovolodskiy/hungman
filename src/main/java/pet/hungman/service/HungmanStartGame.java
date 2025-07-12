@@ -18,9 +18,10 @@ public class HungmanStartGame {
     private final WordBody wordBody;
     private final GameSessionRepository gameSessionRepository;
     private final UserEntityRepository userEntityRepository;
+    private final GetWordService getWordService;
 
     public String bodyChaineMethod(int complexity, String username, Model model) {
-        String word = wordBody.word(complexity);
+        String word = getWordService.getWordMethod(complexity);
         List<Character> list = wordBody.fillTheWord(complexity);
 
         List<String> suggestByUser = new ArrayList<>();

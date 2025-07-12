@@ -7,8 +7,10 @@ services:
       - POSTGRES_DB=hungman
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
+    volumes:
+      - db:/var/lib/postgresql/data
     ports:
-      - "5460:5432"
+      - "0.0.0.0:5460:5432"
     networks:
       - hungman_net
     healthcheck: # Добавляем проверку готовности БД
@@ -29,8 +31,7 @@ services:
       hungman_postgres_db:
         condition: service_healthy  # Ждем готовности БД
     ports:
-      - "9099:9099"
-
+      - "0.0.0.0:9099:9099"
     networks:
       - hungman_net
 
