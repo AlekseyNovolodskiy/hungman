@@ -2,36 +2,40 @@ version: "3.9"
 
 services:
   hungman_postgres_db:
-    image: postgres
+    image: postgres:15-alpine
     environment:
       - POSTGRES_DB=hungman
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=docker
-#    volumes:
-#      - db:/var/lib/postgresql/data postgres
     ports:
-      - "5458:5432"
+      - "5460:5432"
     networks:
       - hungman_net
+    healthcheck: # Добавляем проверку готовности БД
+      test: [ "CMD-SHELL", "pg_isready -U docker -d hungman" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
   service_backend:
     image: hungman_backend
     build: .
-    environment:
-      - spring.datasource.password=docker
-      - spring.datasource.username=docker
-      - spring.datasource.url=jdbc:postgresql://hungman_postgres_db:5432/hungman
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://hungman_postgres_db:5432/hungman
+#      - SPRING_DATASOURCE_USERNAME=docker
+#      - SPRING_DATASOURCE_PASSWORD=docker
 
     depends_on:
-      - hungman_postgres_db
+      hungman_postgres_db:
+        condition: service_healthy  # Ждем готовности БД
     ports:
-      - "9096:9096"
+      - "9099:9099"
 
     networks:
       - hungman_net
 
-volumes:
-  db:
-
 networks:
   hungman_net:
+
+volumes:
+  db:
