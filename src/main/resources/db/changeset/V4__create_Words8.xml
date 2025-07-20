@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <changeSet id="1" author="your_name">
+        <createTable tableName="words8">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="word" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <!-- Создаем sequence для генерации ID (PostgreSQL) -->
+        <createSequence
+                sequenceName="words8_sequence"
+                startValue="1"
+                incrementBy="1"/>
+
+        <!-- Все слова из 8lit.txt -->
+        <insert tableName="words8"><column name="word" value="Академик"/></insert>
+        <insert tableName="words8"><column name="word" value="Академия"/></insert>
+        <insert tableName="words8"><column name="word" value="Акарицид"/></insert>
+        <insert tableName="words8"><column name="word" value="Аквабайк"/></insert>
+        <insert tableName="words8"><column name="word" value="Аквадром"/></insert>
+        <insert tableName="words8"><column name="word" value="Акваланг"/></insert>
+        <insert tableName="words8"><column name="word" value="Аквапарк"/></insert>
+        <insert tableName="words8"><column name="word" value="Акварель"/></insert>
+        <insert tableName="words8"><column name="word" value="Аквариум"/></insert>
+        <insert tableName="words8"><column name="word" value="Акрополь"/></insert>
+        <insert tableName="words8"><column name="word" value="Аксесуар"/></insert>
+        <insert tableName="words8"><column name="word" value="Активист"/></insert>
+        <insert tableName="words8"><column name="word" value="Акционер"/></insert>
+        <insert tableName="words8"><column name="word" value="Бабариха"/></insert>
+        <insert tableName="words8"><column name="word" value="Беглость"/></insert>
+        <insert tableName="words8"><column name="word" value="Бедность"/></insert>
+        <insert tableName="words8"><column name="word" value="Бедняжка"/></insert>
+        <insert tableName="words8"><column name="word" value="Благость"/></insert>
+        <insert tableName="words8"><column name="word" value="Бластома"/></insert>
+        <insert tableName="words8"><column name="word" value="Бледнота"/></insert>
+        <insert tableName="words8"><column name="word" value="Бледность"/></insert>
+        <insert tableName="words8"><column name="word" value="Бобовник"/></insert>
+        <insert tableName="words8"><column name="word" value="Бразилец"/></insert>
+        <insert tableName="words8"><column name="word" value="Додёржка"/></insert>
+        <insert tableName="words8"><column name="word" value="Долбёжка"/></insert>
+        <insert tableName="words8"><column name="word" value="Дополёгу"/></insert>
+        <insert tableName="words8"><column name="word" value="Доёрзать"/></insert>
+        <insert tableName="words8"><column name="word" value="Дрофёнок"/></insert>
+        <insert tableName="words8"><column name="word" value="Дрочёный"/></insert>
+        <insert tableName="words8"><column name="word" value="Дублёнка"/></insert>
+        <insert tableName="words8"><column name="word" value="Дублёный"/></insert>
+        <insert tableName="words8"><column name="word" value="Дублёрша"/></insert>
+        <insert tableName="words8"><column name="word" value="Дурошлёп"/></insert>
+        <insert tableName="words8"><column name="word" value="Дёготный"/></insert>
+        <insert tableName="words8"><column name="word" value="Дёгтевый"/></insert>
+        <insert tableName="words8"><column name="word" value="Дёгтемаз"/></insert>
+        <insert tableName="words8"><column name="word" value="Дёргание"/></insert>
+        <insert tableName="words8"><column name="word" value="Дёрганый"/></insert>
+        <insert tableName="words8"><column name="word" value="Дёрганье"/></insert>
+        <insert tableName="words8"><column name="word" value="Дёренный"/></insert>
+        <insert tableName="words8"><column name="word" value="Дёсенный"/></insert>
+        <insert tableName="words8"><column name="word" value="Даваться"/></insert>
+        <insert tableName="words8"><column name="word" value="Давильня"/></insert>
+        <insert tableName="words8"><column name="word" value="Давиться"/></insert>
+        <insert tableName="words8"><column name="word" value="Дакаться"/></insert>
+        <insert tableName="words8"><column name="word" value="Далиться"/></insert>
+        <insert tableName="words8"><column name="word" value="Дариться"/></insert>
+        <insert tableName="words8"><column name="word" value="Двоиться"/></insert>
+        <insert tableName="words8"><column name="word" value="Еврозаём"/></insert>
+        <insert tableName="words8"><column name="word" value="Егерская"/></insert>
+        <insert tableName="words8"><column name="word" value="Египтяне"/></insert>
+        <insert tableName="words8"><column name="word" value="Егозится"/></insert>
+        <insert tableName="words8"><column name="word" value="Езгаться"/></insert>
+        <insert tableName="words8"><column name="word" value="Ездиться"/></insert>
+        <insert tableName="words8"><column name="word" value="Епидемия"/></insert>
+        <insert tableName="words8"><column name="word" value="Епитафия"/></insert>
+        <insert tableName="words8"><column name="word" value="Епитимия"/></insert>
+        <insert tableName="words8"><column name="word" value="Епитимья"/></insert>
+        <insert tableName="words8"><column name="word" value="Еришться"/></insert>
+        <insert tableName="words8"><column name="word" value="Ершиться"/></insert>
+        <insert tableName="words8"><column name="word" value="Ествяной"/></insert>
+        <insert tableName="words8"><column name="word" value="Евросоюз"/></insert>
+        <insert tableName="words8"><column name="word" value="Единицею"/></insert>
+        <insert tableName="words8"><column name="word" value="Егарнуть"/></insert>
+        <insert tableName="words8"><column name="word" value="Егольник"/></insert>
+        <insert tableName="words8"><column name="word" value="Единенье"/></insert>
+        <insert tableName="words8"><column name="word" value="Единость"/></insert>
+        <insert tableName="words8"><column name="word" value="Едучесть"/></insert>
+        <insert tableName="words8"><column name="word" value="Ежелетье"/></insert>
+        <insert tableName="words8"><column name="word" value="Ездовать"/></insert>
+        <insert tableName="words8"><column name="word" value="Езживать"/></insert>
+        <insert tableName="words8"><column name="word" value="Елгозить"/></insert>
+        <insert tableName="words8"><column name="word" value="Елдыжить"/></insert>
+        <insert tableName="words8"><column name="word" value="Ивасёвый"/></insert>
+        <insert tableName="words8"><column name="word" value="Извёстка"/></insert>
+        <insert tableName="words8"><column name="word" value="Издалёка"/></insert>
+        <insert tableName="words8"><column name="word" value="Изъёжить"/></insert>
+        <insert tableName="words8"><column name="word" value="Импортёр"/></insert>
+        <insert tableName="words8"><column name="word" value="Индеёнок"/></insert>
+        <insert tableName="words8"><column name="word" value="Истёртый"/></insert>
+        <insert tableName="words8"><column name="word" value="Играться"/></insert>
+        <insert tableName="words8"><column name="word" value="Играющая"/></insert>
+        <insert tableName="words8"><column name="word" value="Игуменья"/></insert>
+        <insert tableName="words8"><column name="word" value="Иерархия"/></insert>
+        <insert tableName="words8"><column name="word" value="Избиться"/></insert>
+        <insert tableName="words8"><column name="word" value="Избыться"/></insert>
+        <insert tableName="words8"><column name="word" value="Извалять"/></insert>
+        <insert tableName="words8"><column name="word" value="Изваяние"/></insert>
+        <insert tableName="words8"><column name="word" value="Изваянье"/></insert>
+        <insert tableName="words8"><column name="word" value="Изверять"/></insert>
+        <insert tableName="words8"><column name="word" value="Извеянье"/></insert>
+        <insert tableName="words8"><column name="word" value="Извинять"/></insert>
+        <insert tableName="words8"><column name="word" value="Извиться"/></insert>
+        <insert tableName="words8"><column name="word" value="Изволять"/></insert>
+        <insert tableName="words8"><column name="word" value="Извядать"/></insert>
+        <insert tableName="words8"><column name="word" value="Извязать"/></insert>
+        <insert tableName="words8"><column name="word" value="Извялить"/></insert>
+        <insert tableName="words8"><column name="word" value="Кадрёжка"/></insert>
+        <insert tableName="words8"><column name="word" value="Казённик"/></insert>
+        <insert tableName="words8"><column name="word" value="Казённый"/></insert>
+        <insert tableName="words8"><column name="word" value="Калёвщик"/></insert>
+        <insert tableName="words8"><column name="word" value="Калённый"/></insert>
+        <insert tableName="words8"><column name="word" value="Камнемёт"/></insert>
+        <insert tableName="words8"><column name="word" value="Камнетёс"/></insert>
+        <insert tableName="words8"><column name="word" value="Канканёр"/></insert>
+        <insert tableName="words8"><column name="word" value="Каптёрка"/></insert>
+        <insert tableName="words8"><column name="word" value="Каскадёр"/></insert>
+        <insert tableName="words8"><column name="word" value="Каёмочка"/></insert>
+        <insert tableName="words8"><column name="word" value="Квёлость"/></insert>
+        <insert tableName="words8"><column name="word" value="Клетовьё"/></insert>
+        <insert tableName="words8"><column name="word" value="Клечевьё"/></insert>
+        <insert tableName="words8"><column name="word" value="Клеёнщик"/></insert>
+        <insert tableName="words8"><column name="word" value="Клубенёк"/></insert>
+        <insert tableName="words8"><column name="word" value="Клёкнуть"/></insert>
+        <insert tableName="words8"><column name="word" value="Клёпаный"/></insert>
+        <insert tableName="words8"><column name="word" value="Князёнок"/></insert>
+        <insert tableName="words8"><column name="word" value="Ковёрный"/></insert>
+        <insert tableName="words8"><column name="word" value="Ковёрчик"/></insert>
+        <insert tableName="words8"><column name="word" value="Ковёрщик"/></insert>
+        <insert tableName="words8"><column name="word" value="Козлёнок"/></insert>
+        <insert tableName="words8"><column name="word" value="Колёсико"/></insert>
+        <insert tableName="words8"><column name="word" value="Колёсник"/></insert>
+        <insert tableName="words8"><column name="word" value="Маслёнка"/></insert>
+        <insert tableName="words8"><column name="word" value="Маслёнок"/></insert>
+        <insert tableName="words8"><column name="word" value="Массажёр"/></insert>
+        <insert tableName="words8"><column name="word" value="Матрёшка"/></insert>
+        <insert tableName="words8"><column name="word" value="Медвёдка"/></insert>
+        <insert tableName="words8"><column name="word" value="Медвёдок"/></insert>
+        <insert tableName="words8"><column name="word" value="Мелкозём"/></insert>
+        <insert tableName="words8"><column name="word" value="Мерёжный"/></insert>
+        <insert tableName="words8"><column name="word" value="Метённый"/></insert>
+        <insert tableName="words8"><column name="word" value="Минёрный"/></insert>
+        <insert tableName="words8"><column name="word" value="Мокролёт"/></insert>
+        <insert tableName="words8"><column name="word" value="Молодёжь"/></insert>
+        <insert tableName="words8"><column name="word" value="Монтажёр"/></insert>
+        <insert tableName="words8"><column name="word" value="Морённый"/></insert>
+        <insert tableName="words8"><column name="word" value="Мостовьё"/></insert>
+        <insert tableName="words8"><column name="word" value="Мощённый"/></insert>
+        <insert tableName="words8"><column name="word" value="Мудрёный"/></insert>
+        <insert tableName="words8"><column name="word" value="Мушкетёр"/></insert>
+        <insert tableName="words8"><column name="word" value="Мыслёнка"/></insert>
+        <insert tableName="words8"><column name="word" value="Мёдистый"/></insert>
+        <insert tableName="words8"><column name="word" value="Мёрзнуть"/></insert>
+        <insert tableName="words8"><column name="word" value="Мёткость"/></insert>
+        <insert tableName="words8"><column name="word" value="Магнезия"/></insert>
+        <insert tableName="words8"><column name="word" value="Магнолия"/></insert>
+        <insert tableName="words8"><column name="word" value="Мадьярка"/></insert>
+        <insert tableName="words8"><column name="word" value="Навёртка"/></insert>
+        <insert tableName="words8"><column name="word" value="Надпёлок"/></insert>
+        <insert tableName="words8"><column name="word" value="Надёжный"/></insert>
+        <insert tableName="words8"><column name="word" value="Найдёныш"/></insert>
+        <insert tableName="words8"><column name="word" value="Наклёпка"/></insert>
+        <insert tableName="words8"><column name="word" value="Наклёска"/></insert>
+        <insert tableName="words8"><column name="word" value="Накрёпка"/></insert>
+        <insert tableName="words8"><column name="word" value="Накрёпок"/></insert>
+        <insert tableName="words8"><column name="word" value="Налёзить"/></insert>
+        <insert tableName="words8"><column name="word" value="Налётный"/></insert>
+        <insert tableName="words8"><column name="word" value="Налётчик"/></insert>
+        <insert tableName="words8"><column name="word" value="Наплёкий"/></insert>
+        <insert tableName="words8"><column name="word" value="Напродёр"/></insert>
+        <insert tableName="words8"><column name="word" value="Напролёт"/></insert>
+        <insert tableName="words8"><column name="word" value="Натёклая"/></insert>
+        <insert tableName="words8"><column name="word" value="Натёртый"/></insert>
+        <insert tableName="words8"><column name="word" value="Натёчный"/></insert>
+        <insert tableName="words8"><column name="word" value="Начёсный"/></insert>
+        <insert tableName="words8"><column name="word" value="Начётник"/></insert>
+        <insert tableName="words8"><column name="word" value="Начётный"/></insert>
+        <insert tableName="words8"><column name="word" value="Начётчик"/></insert>
+        <insert tableName="words8"><column name="word" value="Нашлёпка"/></insert>
+        <insert tableName="words8"><column name="word" value="Наёмница"/></insert>
+        <insert tableName="words8"><column name="word" value="Наёмщица"/></insert>
+        <insert tableName="words8"><column name="word" value="Невдомёк"/></insert>
+    </changeSet>
+</databaseChangeLog>
