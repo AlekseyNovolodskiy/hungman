@@ -14,46 +14,6 @@ import java.util.Random;
 @RequiredArgsConstructor
 public class WordBody {
 
-    public String word(int compl) {
-
-        ArrayList<String> arrayOfWord = new ArrayList();
-
-
-        String line = null;
-
-        try {
-
-            BufferedReader reader = null;
-
-            if (compl == 8) {
-                reader = new BufferedReader(new FileReader("src/main/java/pet/hungman/files/8lit.txt"));
-                line = reader.readLine();
-            } else if (compl == 7) {
-                reader = new BufferedReader(new FileReader("src/main/java/pet/hungman/files/7lit.txt"));
-                line = reader.readLine();
-            } else if (compl == 6) {
-                reader = new BufferedReader(new FileReader("src/main/java/pet/hungman/files/6lit.txt"));
-                line = reader.readLine();
-            } else if (compl == 5) {
-                reader = new BufferedReader(new FileReader("src/main/java/pet/hungman/files/5lit.txt"));
-                line = reader.readLine();
-            }
-
-            while (line != null) {
-                arrayOfWord.add(line);
-                line = reader.readLine();
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-        var random = new Random();
-        String randomElement = arrayOfWord.get(random.nextInt(arrayOfWord.size()));
-        return randomElement;
-    }
-
     public List<Character> fillTheWord( int comp) {
         List<Character> list = new ArrayList<>(comp);
         for (int i = 0; i < comp; i++) {

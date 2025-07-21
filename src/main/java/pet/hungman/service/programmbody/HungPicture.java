@@ -1,68 +1,87 @@
 package pet.hungman.service.programmbody;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class HungPicture {
 
-    public void risuemViselicu(int i) {
+
+
+    public String risuemViselicu(int i) {
+        System.out.println("start");
+        String multiLineText = "";
         switch (i) {
+            case 0:
+                multiLineText = """
+                        ||
+                        ||
+                        ||
+                        ||
+                        ||
+                        ||
+                        ||
+                        ||
+                        ||
+                        """;
+
+                break;
             case 1:
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
+                multiLineText = """
+                        ||=====||
+                        ||
+                        ||
+                        ||
+                        ||
+                        ||
+                        ||
+                        ||
+                        """;
+
                 break;
             case 2:
+                multiLineText = """
+                        ||=====||
+                        ||     |
+                        ||     O
+                        ||
+                        ||
+                        ||
+                        ||
+                        ||
+                        """;
 
-                System.out.println("||=====||");
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
-                System.out.println("||");
+
                 break;
+
             case 3:
+                multiLineText = """
+                         ||=====||
+                         ||     |
+                         ||     O
+                         ||    /|\\\\
+                         ||     |
+                         ||
+                         ||
+                         ||
+                        """;
 
-
-                System.out.println("||=====||");
-                System.out.println("||      |");
-                System.out.println("||      O");
-                System.out.println("||     ");
-                System.out.println("||     ");
-                System.out.println("||   ");
-                System.out.println("||");
-                System.out.println("||");
                 break;
 
             case 4:
-
-                System.out.println("||=====||");
-                System.out.println("||      |");
-                System.out.println("||      O");
-                System.out.println("||     /|\\");
-                System.out.println("||      |");
-                System.out.println("||        ");
-                System.out.println("||");
-                System.out.println("||");
-                break;
-
-            case 5:
-                System.out.println("||=====||");
-                System.out.println("||      |");
-                System.out.println("||      O");
-                System.out.println("||     /|\\");
-                System.out.println("||      |");
-                System.out.println("||     / \\");
-                System.out.println("||");
-                System.out.println("||");
+                multiLineText = """
+                         ||=====||
+                         ||     |
+                         ||     O
+                         ||    /|\\\\
+                         ||     |
+                         ||    / \\\\
+                         ||
+                         ||
+                        """;
 
 
         }
 
-
+        return multiLineText;
     }
 }

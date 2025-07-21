@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import pet.hungman.entity.GameSession;
 import pet.hungman.repository.GameSessionRepository;
+import pet.hungman.service.programmbody.HungPicture;
 import pet.hungman.service.programmbody.WordBody;
 
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.UUID;
 public class HungmanGame {
     private final GameSessionRepository gameSessionRepository;
     private final WordBody wordBody;
+    private final HungPicture hungPicture;
 
     public String hungmanStartTheGame(String symbol, String key, Model model) {
         GameSession gameSession = gameSessionRepository.getReferenceById(UUID.fromString(key));
@@ -50,11 +52,14 @@ public class HungmanGame {
         }
 
         log.info(masked.toString());
-
+        String formattedPicture = hungPicture.risuemViselicu(gameSession.getMistakes())
+                .replace("\n", "<br>")
+                .replace(" ", "&nbsp;");
+        model.addAttribute("formattedPicture", "<div style='font-family: monospace;'>" + formattedPicture + "</div>");
         model.addAttribute("sessionKey", key);
         model.addAttribute("maskedWord", masked);
         model.addAttribute("mistakes", gameSession.getMistakes());
-        model.addAttribute("suggested",gameSession.getSuggestedByUser());
+        model.addAttribute("suggested", gameSession.getSuggestedByUser());
 
         if (gameSession.getUserEntity() != null) {
             model.addAttribute("username", gameSession.getUserEntity().getLogin());

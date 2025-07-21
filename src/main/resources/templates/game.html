@@ -25,8 +25,11 @@
 <body>
 <div id="header">
     <p>Пользователь: <span th:text="${username}"></span></p>
+
 </div>
+<div th:utext="${formattedPicture}"></div>
 <p>Совершено ошибок: <span th:text="${mistakes}"></span></p>
+
 <p>Использованные буквы: <span th:text="${suggested}"></span></p>
 <div id="game">
     <p>Замаскированное слово: <span th:text="${maskedWord}"></span></p>

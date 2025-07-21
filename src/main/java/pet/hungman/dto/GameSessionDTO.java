@@ -1,4 +1,4 @@
-package pet.hungman.controllers.dto;
+package pet.hungman.dto;
 
 import lombok.Data;
 import java.util.List;
