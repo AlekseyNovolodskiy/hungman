@@ -18,7 +18,7 @@ public class GameSession {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID keyId; // keyId = ID
+    private UUID keyId;
 
     @Column(name = "word")
     private String word;

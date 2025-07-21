@@ -54,6 +54,7 @@ public class HungmanGame {
         model.addAttribute("sessionKey", key);
         model.addAttribute("maskedWord", masked);
         model.addAttribute("mistakes", gameSession.getMistakes());
+        model.addAttribute("suggested",gameSession.getSuggestedByUser());
 
         if (gameSession.getUserEntity() != null) {
             model.addAttribute("username", gameSession.getUserEntity().getLogin());

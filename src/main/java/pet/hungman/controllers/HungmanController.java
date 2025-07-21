@@ -10,8 +10,7 @@ import pet.hungman.service.AuthService;
 import pet.hungman.service.HungmanGame;
 import pet.hungman.service.HungmanStartGame;
 
-import static pet.hungman.controllers.PathConstant.GAME;
-import static pet.hungman.controllers.PathConstant.NEW_GAME;
+import static pet.hungman.controllers.PathConstant.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -27,7 +26,7 @@ public class HungmanController {
         return "index.html";
     }
 
-    @GetMapping("/hungman/auth")
+    @GetMapping(AUTH)
     public String authorization(@RequestParam String login, @RequestParam String password, Model model) {
         String result = authService.authTheUser(login, password, model);
         if ("start".equals(result)) {
@@ -35,7 +34,6 @@ public class HungmanController {
         }
         return result;
     }
-
 
     @GetMapping(NEW_GAME)
     public String hungMan(@RequestParam Integer complexity, @RequestParam String username, Model model) {
@@ -47,7 +45,7 @@ public class HungmanController {
         return hungmanGame.hungmanStartTheGame(symbol, key, model);
     }
 
-    @GetMapping("/hungman/start")
+    @GetMapping(START)
     public String startNewGame(@RequestParam String username, Model model) {
         model.addAttribute("username", username);
         return "start";

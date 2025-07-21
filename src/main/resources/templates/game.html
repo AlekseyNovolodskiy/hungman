@@ -27,6 +27,7 @@
     <p>Пользователь: <span th:text="${username}"></span></p>
 </div>
 <p>Совершено ошибок: <span th:text="${mistakes}"></span></p>
+<p>Использованные буквы: <span th:text="${suggested}"></span></p>
 <div id="game">
     <p>Замаскированное слово: <span th:text="${maskedWord}"></span></p>
     <form action="/hungman/game" method="get">
