@@ -12,7 +12,6 @@ import pet.hungman.service.programmbody.WordBody;
 import java.util.List;
 import java.util.UUID;
 
-@Slf4j
 @Service
 @AllArgsConstructor
 public class HungmanGame {
@@ -35,13 +34,10 @@ public class HungmanGame {
             return "win";
         }
 
-        log.info(word);
-        log.info(gameSession.toString());
-
         if (gameSession.getMistakes() == null) {
             gameSession.setMistakes(0);
         }
-        if (!masked.contains(symbol.charAt(0))) {
+        if (!masked.contains(symbol.toLowerCase().charAt(0))) {
             int mistakes = gameSession.getMistakes();
             gameSession.setMistakes(mistakes + 1);
             gameSessionRepository.save(gameSession);
@@ -51,7 +47,6 @@ public class HungmanGame {
             return "loose";
         }
 
-        log.info(masked.toString());
         String formattedPicture = hungPicture.risuemViselicu(gameSession.getMistakes())
                 .replace("\n", "<br>")
                 .replace(" ", "&nbsp;");
@@ -64,7 +59,6 @@ public class HungmanGame {
         if (gameSession.getUserEntity() != null) {
             model.addAttribute("username", gameSession.getUserEntity().getLogin());
         } else {
-            log.error("UserEntity is null for game session: " + gameSession.getKeyId());
             model.addAttribute("username", "Unknown");
         }
 

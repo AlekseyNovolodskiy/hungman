@@ -21,9 +21,6 @@ public class UserEntity {
     @Column(name = "login")
     private String login;
 
-    @Column(name = "password")
-    private String password;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "gamesession_id")
     @ToString.Exclude

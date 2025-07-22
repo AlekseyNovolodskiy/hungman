@@ -13,17 +13,17 @@ import java.util.Optional;
 public class AuthService {
     private final UserEntityRepository userEntityRepository;
 
-    public String authTheUser(String login, String password, Model model) {
-        Optional<UserEntity> byLoginAndPassword = userEntityRepository.findByLoginAndPassword(login, password);
-        if (byLoginAndPassword.isEmpty()) {
+    public String authTheUser(String login, Model model) {
+        Optional<UserEntity> byLogin = userEntityRepository.findByLogin(login);
+        if (byLogin.isEmpty()) {
             UserEntity userEntity = new UserEntity();
             userEntity.setLogin(login);
-            userEntity.setPassword(password);
             userEntity.setGameSession(null);
             userEntityRepository.save(userEntity);
             return "start";
         }
-        UserEntity userEntity = byLoginAndPassword.get();
+
+        UserEntity userEntity = byLogin.get();
 
         if (userEntity.getGameSession() != null) {
             model.addAttribute("sessionKey", userEntity.getGameSession().getKeyId());

@@ -27,8 +27,8 @@ public class HungmanController {
     }
 
     @GetMapping(AUTH)
-    public String authorization(@RequestParam String login, @RequestParam String password, Model model) {
-        String result = authService.authTheUser(login, password, model);
+    public String authorization(@RequestParam String login, Model model) {
+        String result = authService.authTheUser(login, model);
         if ("start".equals(result)) {
             model.addAttribute("username", login);
         }
