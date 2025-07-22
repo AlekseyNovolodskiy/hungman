@@ -1,7 +1,8 @@
 package pet.hungman.service;
 
 import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import pet.hungman.entity.GameSession;
@@ -10,6 +11,7 @@ import pet.hungman.service.programmbody.HungPicture;
 import pet.hungman.service.programmbody.WordBody;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -18,6 +20,9 @@ public class HungmanGame {
     private final GameSessionRepository gameSessionRepository;
     private final WordBody wordBody;
     private final HungPicture hungPicture;
+
+
+    private static final Logger userLogger  = LoggerFactory.getLogger("USER_LOGGER");
 
     public String hungmanStartTheGame(String symbol, String key, Model model) {
         GameSession gameSession = gameSessionRepository.getReferenceById(UUID.fromString(key));
@@ -43,6 +48,9 @@ public class HungmanGame {
             gameSessionRepository.save(gameSession);
         }
         if (gameSession.getMistakes() >= 5) {
+
+            userLogger.info("Пользователь "+getLoginFromGameSession(gameSession.getKeyId())+" отгадал "+wordBody.countOfletters(masked)+" из "+masked.size());
+
             model.addAttribute("username", gameSession.getUserEntity().getLogin());
             return "loose";
         }
@@ -63,5 +71,13 @@ public class HungmanGame {
         }
 
         return "game";
+    }
+
+    private String getLoginFromGameSession(UUID gameSessionId){
+        Optional<GameSession> byId = gameSessionRepository.findById(gameSessionId);
+        if(byId.isPresent()){
+            return byId.get().getUserEntity().getLogin();
+        }
+        return "Ошибка поиска полльзователя";
     }
 }

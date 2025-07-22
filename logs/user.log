@@ -1,0 +1,13 @@
+20:37:01.927 [http-nio-9099-exec-3] INFO  USER_LOGGER - Пользователь отгадал 0 из 5
+20:37:10.211 [http-nio-9099-exec-8] INFO  USER_LOGGER - Пользователь отгадал 0 из 5
+20:37:43.430 [http-nio-9099-exec-7] INFO  USER_LOGGER - Пользователь отгадал 0 из 5
+20:38:29.282 [http-nio-9099-exec-10] INFO  USER_LOGGER - Пользователь отгадал 3 из 5
+20:41:09.251 [http-nio-9099-exec-9] INFO  USER_LOGGER - Пользователь отгадал 2 из 7
+20:44:01.930 [http-nio-9099-exec-9] INFO  USER_LOGGER - Пользователь отгадал 2 из 5
+20:50:21.123 [http-nio-9099-exec-3] INFO  USER_LOGGER - Пользователь отгадал 1 из 5
+20:54:52.808 [http-nio-9099-exec-9] INFO  USER_LOGGER - Пользователь отгадал 4 из 5
+21:00:26.688 [http-nio-9099-exec-10] INFO  USER_LOGGER - Пользователь отгадал 2 из 5
+21:18:29.698 [http-nio-9099-exec-7] INFO  USER_LOGGER - Пользователь ва1 из 5
+21:20:22.624 [http-nio-9099-exec-9] INFO  USER_LOGGER - Пользователь ва отгадал 3 из 5
+21:27:32.695 [http-nio-9099-exec-7] INFO  USER_LOGGER - Пользователь ва отгадал 1 из 5
+21:27:50.377 [http-nio-9099-exec-1] INFO  p.h.controllers.HungmanController - user starts the game with login уф

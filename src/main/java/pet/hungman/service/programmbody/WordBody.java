@@ -34,12 +34,21 @@ public class WordBody {
         return updatedMask;
     }
 
+    public int countOfletters(List<Character> word){
+        int count =0;
+        for (char letter : word){
+            if(letter!='*'){
+                count++;
+            }
+        }
+        return count;
+    }
+
     public boolean testToWin(List list) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).equals('*'))
                 return false;
         }
-        System.out.println("Ok you win");
         return true;
     }
 

@@ -8,7 +8,6 @@ public class HungPicture {
 
 
     public String risuemViselicu(int i) {
-        System.out.println("start");
         String multiLineText = "";
         switch (i) {
             case 0:
