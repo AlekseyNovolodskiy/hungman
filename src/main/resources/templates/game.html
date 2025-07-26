@@ -1,9 +1,60 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Виселица - Игра</title>-->
+<!--    <link rel="stylesheet" href="/styles.css">-->
+<!--    <script>-->
+<!--        function validateInput(event) {-->
+<!--            const char = String.fromCharCode(event.which);-->
+<!--            const regex = /^[а-яА-ЯёЁ]+$/;-->
+<!--            if (!regex.test(char)) {-->
+<!--                event.preventDefault();-->
+<!--                alert('Пожалуйста, вводите только буквы кириллицы.');-->
+<!--            }-->
+<!--        }-->
+
+<!--        function setupValidation() {-->
+<!--            const input = document.getElementById('symbol');-->
+<!--            input.addEventListener('keypress', validateInput);-->
+<!--        }-->
+
+<!--        document.addEventListener('DOMContentLoaded', setupValidation);-->
+<!--    </script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="header">-->
+<!--    <p>Пользователь: <span th:text="${username}"></span></p>-->
+
+<!--</div>-->
+<!--<div th:utext="${formattedPicture}"></div>-->
+<!--<p>Совершено ошибок: <span th:text="${mistakes}"></span></p>-->
+
+<!--<p>Использованные буквы: <span th:text="${suggested}"></span></p>-->
+<!--<div id="game">-->
+<!--    <p>Замаскированное слово: <span th:text="${maskedWord}"></span></p>-->
+<!--    <form action="/hungman/game" method="get">-->
+<!--        <input type="hidden" name="key" th:value="${sessionKey}">-->
+<!--        <label for="symbol">Введите букву:</label>-->
+<!--        <input type="text" name="symbol" id="symbol" maxlength="1" required>-->
+<!--        <button type="submit">Угадать</button>-->
+<!--    </form>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Виселица - Игра</title>
     <link rel="stylesheet" href="/styles.css">
+    <style>
+        input[type="text"] {
+            font-size: 16px;
+            touch-action: manipulation;
+        }
+    </style>
     <script>
         function validateInput(event) {
             const char = String.fromCharCode(event.which);
@@ -25,11 +76,9 @@
 <body>
 <div id="header">
     <p>Пользователь: <span th:text="${username}"></span></p>
-
 </div>
 <div th:utext="${formattedPicture}"></div>
 <p>Совершено ошибок: <span th:text="${mistakes}"></span></p>
-
 <p>Использованные буквы: <span th:text="${suggested}"></span></p>
 <div id="game">
     <p>Замаскированное слово: <span th:text="${maskedWord}"></span></p>
