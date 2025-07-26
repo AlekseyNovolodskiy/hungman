@@ -8,7 +8,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:postgresql://localhost:5460/hungman
+    url: jdbc:postgresql://hungman_postgres_db:5432/hungman
     password: docker
     username: docker
   liquibase:
@@ -17,7 +17,7 @@ spring:
     default-schema: public
     user: docker
     password: docker
-    url: jdbc:postgresql://localhost:5460/hungman
+    url: jdbc:postgresql://hungman_postgres_db:5432/hungman
   #    url: jdbc:postgresql://localhost:5460/hungman
 #  url: jdbc:postgresql://hungman_postgres_db:5432/hungman
 #  jdbc:postgresql://localhost:5432/hungman
