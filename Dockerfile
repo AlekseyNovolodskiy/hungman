@@ -12,7 +12,7 @@
 #COPY --from=builder /app/target/*.jar /app/*.jar
 #EXPOSE 9096
 #ENTRYPOINT ["java", "-jar", "/app/*.jar"]
-FROM eclipse-temurin:17-jdk-alpine
+FROM eclipse-temurin:21-jdk-alpine
 VOLUME /tmp
 COPY target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
