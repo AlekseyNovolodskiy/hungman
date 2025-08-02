@@ -56,35 +56,46 @@ public class TgBotConsumer implements LongPollingSingleThreadUpdateConsumer {
         switch (data) {
             case "user" -> {
                 List<String> userLogs = logService.getUserLogs();
-                for (String log : userLogs) {
-
-                    StringBuilder sbLogs = new StringBuilder();
-                    for (int i = 0; i < 10; i++) {
-
-                        sbLogs.append(log);
-                        sbLogs.append("//n");
-                        userLogs.removeFirst();
-
-                    }
-                    sendMessage(chatId, sbLogs.toString());
-                }
+                sendLogsInChunks(chatId, userLogs, "User logs");
             }
 
             case "app" -> {
                 List<String> appLogs = logService.getAppLogs();
-                StringBuilder sbLogs = new StringBuilder();
-                for (String log : appLogs) {
-
-                    sbLogs.append(log);
-                    sbLogs.append("//n");
-                    appLogs.removeFirst();
-                    sendMessage(chatId, sbLogs.toString());
-                }
+                sendLogsInChunks(chatId, appLogs, "App logs");
             }
             default -> sendMessage(chatId, "неизвестная команда");
         }
     }
+    @SneakyThrows
+    private void sendLogsInChunks(Long chatId, List<String> logs, String logType) {
 
+        final int CHUNK_SIZE = 50;
+        StringBuilder chunk = new StringBuilder();
+        chunk.append("=== ").append(logType).append(" ===\n");
+
+        int counter = 0;
+
+        for (String logEntry : logs) {
+            chunk.append(logEntry).append("\n");
+            counter++;
+
+            // Если набрали CHUNK_SIZE записей или это последняя запись
+            if (counter % CHUNK_SIZE == 0 || counter == logs.size()) {
+                sendMessage(chatId, chunk.toString());
+                chunk = new StringBuilder(); // Начинаем новый чанк
+                if (counter < logs.size()) {
+                    chunk.append("=== ").append(logType).append( " (продолжение) ===\n");
+                }
+
+                // Небольшая задержка между сообщениями, чтобы не превысить лимиты Telegram
+                Thread.sleep(300);
+            }
+        }
+
+        if (logs.isEmpty()) {
+            sendMessage(chatId, "Нет записей в логах");
+        }
+    }
 
     @SneakyThrows
     private void sendMessage(Long chatId, String text) {

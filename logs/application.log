@@ -1,1 +1,14 @@
 21:27:50.377 [http-nio-9099-exec-1] INFO  p.h.controllers.HungmanController - user starts the game with login уф
+09:44:42.703 [main] INFO  pet.hungman.HungmanApplication - Starting HungmanApplication using Java 21.0.1 with PID 8308 (C:\Users\alex\Downloads\hungman-main\hungman-main\target\classes started by alex in C:\Users\alex\Downloads\hungman-main\hungman-main)
+09:44:42.706 [main] INFO  pet.hungman.HungmanApplication - No active profile set, falling back to 1 default profile: "default"
+09:45:22.974 [main] INFO  pet.hungman.HungmanApplication - Starting HungmanApplication using Java 21.0.1 with PID 13488 (C:\Users\alex\Downloads\hungman-main\hungman-main\target\classes started by alex in C:\Users\alex\Downloads\hungman-main\hungman-main)
+09:45:22.978 [main] INFO  pet.hungman.HungmanApplication - No active profile set, falling back to 1 default profile: "default"
+09:46:17.031 [main] INFO  pet.hungman.HungmanApplication - Starting HungmanApplication using Java 21.0.1 with PID 16440 (C:\Users\alex\Downloads\hungman-main\hungman-main\target\classes started by alex in C:\Users\alex\Downloads\hungman-main\hungman-main)
+09:46:17.033 [main] INFO  pet.hungman.HungmanApplication - No active profile set, falling back to 1 default profile: "default"
+09:46:25.990 [main] INFO  pet.hungman.HungmanApplication - Started HungmanApplication in 9.444 seconds (process running for 10.413)
+10:28:17.330 [main] INFO  pet.hungman.HungmanApplication - Starting HungmanApplication using Java 21.0.1 with PID 3052 (C:\Users\alex\Downloads\hungman-main\hungman-main\target\classes started by alex in C:\Users\alex\Downloads\hungman-main\hungman-main)
+10:28:17.333 [main] INFO  pet.hungman.HungmanApplication - No active profile set, falling back to 1 default profile: "default"
+10:28:26.045 [main] INFO  pet.hungman.HungmanApplication - Started HungmanApplication in 9.199 seconds (process running for 10.147)
+10:30:27.466 [main] INFO  pet.hungman.HungmanApplication - Starting HungmanApplication using Java 21.0.1 with PID 15844 (C:\Users\alex\Downloads\hungman-main\hungman-main\target\classes started by alex in C:\Users\alex\Downloads\hungman-main\hungman-main)
+10:30:27.472 [main] INFO  pet.hungman.HungmanApplication - No active profile set, falling back to 1 default profile: "default"
+10:30:36.981 [main] INFO  pet.hungman.HungmanApplication - Started HungmanApplication in 10.094 seconds (process running for 11.847)
