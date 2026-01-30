@@ -12,3 +12,13 @@
 10:30:27.466 [main] INFO  pet.hungman.HungmanApplication - Starting HungmanApplication using Java 21.0.1 with PID 15844 (C:\Users\alex\Downloads\hungman-main\hungman-main\target\classes started by alex in C:\Users\alex\Downloads\hungman-main\hungman-main)
 10:30:27.472 [main] INFO  pet.hungman.HungmanApplication - No active profile set, falling back to 1 default profile: "default"
 10:30:36.981 [main] INFO  pet.hungman.HungmanApplication - Started HungmanApplication in 10.094 seconds (process running for 11.847)
+19:31:08.433 [main] INFO  pet.hungman.HungmanApplication - Starting HungmanApplication using Java 21.0.9 with PID 9260 (E:\Projects\hungman\target\classes started by Test in E:\Projects\hungman)
+19:31:08.435 [main] INFO  pet.hungman.HungmanApplication - No active profile set, falling back to 1 default profile: "default"
+19:32:19.246 [main] INFO  pet.hungman.HungmanApplication - Starting HungmanApplication using Java 21.0.9 with PID 11504 (E:\Projects\hungman\target\classes started by Test in E:\Projects\hungman)
+19:32:19.246 [main] INFO  pet.hungman.HungmanApplication - No active profile set, falling back to 1 default profile: "default"
+19:32:24.027 [main] INFO  pet.hungman.HungmanApplication - Started HungmanApplication in 5.124 seconds (process running for 5.575)
+19:34:50.423 [main] INFO  pet.hungman.HungmanApplication - Starting HungmanApplication using Java 21.0.9 with PID 21916 (E:\Projects\hungman\target\classes started by Test in E:\Projects\hungman)
+19:34:50.426 [main] INFO  pet.hungman.HungmanApplication - No active profile set, falling back to 1 default profile: "default"
+19:35:05.123 [main] INFO  pet.hungman.HungmanApplication - Starting HungmanApplication using Java 21.0.9 with PID 22524 (E:\Projects\hungman\target\classes started by Test in E:\Projects\hungman)
+19:35:05.128 [main] INFO  pet.hungman.HungmanApplication - No active profile set, falling back to 1 default profile: "default"
+19:35:09.809 [main] INFO  pet.hungman.HungmanApplication - Started HungmanApplication in 5.025 seconds (process running for 5.479)

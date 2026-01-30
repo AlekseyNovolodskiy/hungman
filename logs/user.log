@@ -11,3 +11,4 @@
 21:20:22.624 [http-nio-9099-exec-9] INFO  USER_LOGGER - Пользователь ва отгадал 3 из 5
 21:27:32.695 [http-nio-9099-exec-7] INFO  USER_LOGGER - Пользователь ва отгадал 1 из 5
 21:27:50.377 [http-nio-9099-exec-1] INFO  p.h.controllers.HungmanController - user starts the game with login уф
+19:33:12.283 [http-nio-9099-exec-4] INFO  USER_LOGGER - user starts the game with login rrr

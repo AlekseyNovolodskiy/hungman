@@ -13,7 +13,7 @@
     <name>hungman</name>
     <description>hungman</description>
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
 
     </properties>
     <dependencies>
@@ -38,11 +38,11 @@
             </exclusions>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.telegram</groupId>-->
-<!--            <artifactId>telegrambots</artifactId>-->
-<!--            <version>6.9.7.1</version> &lt;!&ndash; Актуальная версия &ndash;&gt;-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.telegram</groupId>-->
+        <!--            <artifactId>telegrambots</artifactId>-->
+        <!--            <version>6.9.7.1</version> &lt;!&ndash; Актуальная версия &ndash;&gt;-->
+        <!--        </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.telegram/telegrambots-client -->
         <dependency>
@@ -76,11 +76,11 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.liquibase</groupId>
-            <artifactId>liquibase-core</artifactId>
-            <version>4.25.0</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.liquibase</groupId>-->
+        <!--            <artifactId>liquibase-core</artifactId>-->
+        <!--            <version>4.25.0</version>-->
+        <!--        </dependency>-->
 
         <dependency>
             <groupId>javax.annotation</groupId>

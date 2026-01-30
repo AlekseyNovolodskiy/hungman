@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AmplicodeJpaDataSourceConfig">
+    <data-sources>
+      <data-source id="361107ee-a840-4678-a444-67173e74fa80" name="hungman" url="jdbc:postgresql://localhost:5460/hungman" driverClass="org.postgresql.Driver" />
+    </data-sources>
+  </component>
+</project>

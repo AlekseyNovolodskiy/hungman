@@ -1,20 +1,20 @@
-version: "3.9"
+version: "3.7"
 
 services:
   hungman_postgres_db:
     image: postgres:15-alpine
     environment:
-      - POSTGRES_DB=hungman
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=docker
+      POSTGRES_DB: hungman
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
     volumes:
       - db:/var/lib/postgresql/data
     ports:
       - "0.0.0.0:5460:5432"
     networks:
       - hungman_net
-    healthcheck: # Добавляем проверку готовности БД
-      test: [ "CMD-SHELL", "pg_isready -U docker -d hungman" ]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docker -d hungman"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -22,14 +22,15 @@ services:
   service_backend:
     image: hungman_backend
     build: .
-#    environment:
-#      - SPRING_DATASOURCE_URL=jdbc:postgresql://hungman_postgres_db:5432/hungman
-#      - SPRING_DATASOURCE_USERNAME=docker
-#      - SPRING_DATASOURCE_PASSWORD=docker
-
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://hungman_postgres_db:5432/hungman
+      SPRING_DATASOURCE_USERNAME: docker
+      SPRING_DATASOURCE_PASSWORD: docker
+      SPRING_JPA_HIBERNATE_DDL_AUTO: validate
+      SPRING_LIQUIBASE_ENABLED: "true"
     depends_on:
       hungman_postgres_db:
-        condition: service_healthy  # Ждем готовности БД
+        condition: service_healthy
     ports:
       - "0.0.0.0:9099:9099"
     networks:

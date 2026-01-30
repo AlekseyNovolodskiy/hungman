@@ -6,26 +6,16 @@ spring:
         format_sql: false
     show-sql: false
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate  # Изменено с update на validate
   datasource:
     url: jdbc:postgresql://hungman_postgres_db:5432/hungman
-    password: docker
     username: docker
+    password: docker
+    driver-class-name: org.postgresql.Driver
   liquibase:
     enabled: true
     change-log: classpath:db/changelog/db.changelog-master.xml
     default-schema: public
-    user: docker
-    password: docker
-    url: jdbc:postgresql://hungman_postgres_db:5432/hungman
-  #    url: jdbc:postgresql://localhost:5460/hungman
-#  url: jdbc:postgresql://hungman_postgres_db:5432/hungman
-#  jdbc:postgresql://localhost:5432/hungman
-logging:
-  level:
-    org.hibernate.SQL: OFF
-    org.hibernate.type: OFF
-
   thymeleaf:
     cache: 'false'
     mode: HTML
@@ -36,5 +26,13 @@ logging:
       matching-strategy: ANT_PATH_MATCHER
   application:
     name: hungman
+
 server:
   port: '9099'
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: TRACE
+    org.springframework: INFO
+    liquibase: INFO
